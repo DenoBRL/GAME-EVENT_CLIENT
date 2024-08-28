@@ -1,23 +1,27 @@
 import './App.css'
-
 import Dashboard from './components/Dashboard/Dashboard';
-import Login from './components/login/Login';
-import Register from './components/register/Register';
+import LoginForm from './components/login/LoginForm';
+import RegisterForm from './components/register/RegisterForm';
+import Home from './pages/Home';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 const router = createBrowserRouter([
   {
+    path: '/',
+    element: <div><Home /></div>
+  },
+  {
     path: '/dashboard',
     element: <div><Dashboard /></div>
   },
   {
-    path: '/',
-    element: <div><Login /></div>
+    path: '/login',
+    element: <div><LoginForm /></div>
   },
   {
     path: '/register',
-    element: <div><Register /></div>
+    element: <div><RegisterForm /></div>
   }
 ]
 );

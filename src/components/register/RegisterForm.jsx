@@ -1,4 +1,4 @@
-import './Register.css';
+import './RegisterForm.css';
 import '../../App.css';
 import { Link } from 'react-router-dom';
 
@@ -9,9 +9,12 @@ import { FaRegImage } from "react-icons/fa6";
 
 import video from '../assets/video.mp4';
 import logo from '../assets/logo.png';
+import Menu from '../menu/Menu';
 
 const Register = () => {
   return (
+    <div>
+    <Menu />
     <div className='registerPage flex'>
       <div className='container flex'>
 
@@ -24,7 +27,7 @@ const Register = () => {
 
         <div className='footerDiv flex'>
           <span className='text'>Vous avez déjà un compte ?</span>
-          <Link to={'/'}>
+          <Link to={'/login'}>
           <button className='btn'>Connectez-vous</button>
           </Link>
         </div>
@@ -110,6 +113,7 @@ const Register = () => {
           
   
       </div>
+    </div>
     </div>
   )
 }

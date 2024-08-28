@@ -1,33 +1,35 @@
-import './Login.css';
+import './LoginForm.css';
 import '../../App.css';
 import { Link } from 'react-router-dom';
 
 import { IoIosMail } from "react-icons/io";
 import { BsFillShieldLockFill } from "react-icons/bs";
-import { AiOutlineSwapRight} from "react-icons/ai";
+import { AiOutlineSwapRight } from "react-icons/ai";
 
 import video from '../assets/video.mp4';
 import logo from '../assets/logo.png';
+import Menu from '../menu/Menu';
 
 const Login = () => {
   return (
+    <div>
+    <Menu />
     <div className='loginPage flex'>
       <div className='container flex'>
 
         <div className='videoDiv'>
           <video src={video} autoPlay muted loop></video>
 
-        <div className='textDiv'>
-          <h2 className='title'>Page de connexion</h2>
-        </div>  
+          <div className='textDiv'>
+            <h2 className='title'>Page de connexion</h2>
+          </div>
 
-        <div className='footerDiv flex'>
-          <span className='text'>Vous n&apos;avez pas de compte ?</span>
-          <Link to={'/register'}>
-          <button className='btn'>Inscrivez-vous</button>
-          </Link>
-        </div>
-
+          <div className='footerDiv flex'>
+            <span className='text'>Vous n&apos;avez pas de compte ?</span>
+            <Link to={'/register'}>
+              <button className='btn'>Inscrivez-vous</button>
+            </Link>
+          </div>
         </div>
 
         <div className='formDiv flex'>
@@ -42,7 +44,7 @@ const Login = () => {
             <div className='inputDiv'>
               <label htmlFor="email">Adresse mail</label>
               <div className='input flex'>
-                <IoIosMail className="icon"/>
+                <IoIosMail className="icon" />
                 <input type="email" id="email" placeholder="Saisissez votre adresse mail" required />
               </div>
             </div>
@@ -50,14 +52,14 @@ const Login = () => {
             <div className='inputDiv'>
               <label htmlFor="password">Mot de passe</label>
               <div className='input flex'>
-                <BsFillShieldLockFill className="icon"/>
+                <BsFillShieldLockFill className="icon" />
                 <input type="password" id="password" placeholder="Saisissez votre mot de passe" required />
               </div>
             </div>
             <br />
             <button type="submit" className='btn flex'>
               <span>S&apos;inscrire</span>
-              <AiOutlineSwapRight className="icon"/>
+              <AiOutlineSwapRight className="icon" />
             </button>
 
             <span className='forgotPassword'>
@@ -66,9 +68,10 @@ const Login = () => {
 
           </form>
         </div>
-          
-  
+
+
       </div>
+    </div>
     </div>
   )
 }
