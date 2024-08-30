@@ -1,10 +1,11 @@
 import { Layout, Button, Flex } from 'antd';
-import SidebarDashboard from '../dashboard/SidebarDashboard';
-import CustomHeader from '../dashboard/HeaderDashboard';
 import { useState } from 'react';
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
-import MainContentDashboard from '../dashboard/MainContentDashboard';
-import SideContentDashboard from '../dashboard/SideContentDashboard';
+
+import SidebarDashboard from '../../../components/admin/dashboard/SidebarDashboard';
+import CustomHeader from '../../../components/admin/dashboard/HeaderDashboard';
+import MainContentDashboard from '../../../components/admin/dashboard/MainContentDashboard';
+import SideContentDashboard from '../../../components/admin/dashboard/SideContentDashboard';
 
 
 const { Sider, Header, Content } = Layout;

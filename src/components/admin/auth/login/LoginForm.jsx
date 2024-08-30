@@ -1,19 +1,17 @@
-import './LoginForm.css';
-import '../../App.css';
+// import '../../admin/login/LoginForm';
+import '../../../../App.css';
 import { Link } from 'react-router-dom';
 
 import { IoIosMail } from "react-icons/io";
 import { BsFillShieldLockFill } from "react-icons/bs";
 import { AiOutlineSwapRight } from "react-icons/ai";
 
-import video from '../assets/video.mp4';
-import logo from '../assets/logo.png';
-import Menu from '../menu/Menu';
+import video from '../../assets/video.mp4';
+import logo from '../../assets/logo.png';
 
 const Login = () => {
   return (
     <div>
-    <Menu />
     <div className='loginPage flex'>
       <div className='container flex'>
 

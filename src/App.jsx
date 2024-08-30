@@ -1,38 +1,27 @@
-import './App.css'
-import Dashboard from './components/Dashboard/Dashboard';
-import LoginForm from './components/login/LoginForm';
-import RegisterForm from './components/register/RegisterForm';
-import Home from './pages/Home';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import PublicRouter from "./pages/public/routes/PublicRouter.jsx";
+import AdminRouter from "./pages/admin/routes/AdminRouter.jsx";
+// import Login from "./pages/public/Login";
+// import AuthGuard from "./components/admin/AuthGuard";
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <div><Home /></div>
-  },
-  {
-    path: '/dashboard',
-    element: <div><Dashboard /></div>
-  },
-  {
-    path: '/login',
-    element: <div><LoginForm /></div>
-  },
-  {
-    path: '/register',
-    element: <div><RegisterForm /></div>
-  }
-]
-);
+
+// const token = localStorage.getItem("access_token");
+// console.log(token);
 
 function App() {
-
   return (
-      <div>
-        <RouterProvider router={router} />
-      </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/*" element={<PublicRouter />} />
+        <Route path="/admin/*" element={
+          // <AuthGuard>
+            <AdminRouter/>
+          // </AuthGuard>
+      } />
+      {/* <Route path="/admin/*" element={token ? <AdminRouter/> : <Login/> } /> */}
+      </Routes>
+    </BrowserRouter>
+  );
 }
-
-export default App
+export default App;

@@ -1,9 +1,9 @@
 import { Flex } from "antd"
-import BannerEvents from "../dashboard/BannerEvents"
-import BannerGames from "../dashboard/BannerGames"
-import BannerUsers from "../dashboard/BannerUsers"
-import BannerAddresses from "../dashboard/BannerAddresses"
-import BannerComments from "../dashboard/BannerComments"
+import BannerEvents from "../dashboard/banners/BannerEvents"
+import BannerGames from "../dashboard/banners/BannerGames"
+import BannerUsers from "../dashboard/banners/BannerUsers"
+import BannerAddresses from "../dashboard/banners/BannerAddresses"
+import BannerComments from "../dashboard/banners/BannerComments"
 
 const MainContent = () => {
   return (
