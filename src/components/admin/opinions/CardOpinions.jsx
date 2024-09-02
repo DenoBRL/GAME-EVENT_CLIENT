@@ -3,10 +3,14 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import axios from "axios";
+import ReactPaginate from 'react-paginate';
 
 function BasicExample() {
   const [opinions, setOpinions] = useState([]);
   const [user, setUser] = useState([]);
+  const handlePageClick = (data) => {
+    console.log(data.selcted)
+  }
   
   useEffect(() => {
     displayOpinions();
@@ -26,6 +30,7 @@ function BasicExample() {
   };
 
   return (
+    <div>
     <div className="containerOpinions">
     {opinions.map((opinion) => (
         <div key={opinion.id}>
@@ -43,6 +48,26 @@ function BasicExample() {
     </Card>
     </div>
     ))}
+    </div>
+    <ReactPaginate
+      previousLabel={'Précédent'}
+      nextLabel={'Suivant'}
+      breakLabel={'...'}
+      pageCount={20}
+      marginPagesDisplayed={2}
+      pageRangeDisplayed={3}
+      onPageChange={(handlePageClick)}
+      containerClassName={'pagination justify-content-center'}
+      pageClassName={'page-item'}
+      pageLinkClassName={'page-link'}
+      previousClassName={'page-item'}
+      previousLinkClassName={'page-link'}
+      nextClassName={'page-item'}
+      nextLinkClassName={'page-link'}
+      breakClassName={'page-item'}
+      breakLinkClassName={'page-link'}
+      activeClassName={'active'}
+    />
     </div>
   );
 }

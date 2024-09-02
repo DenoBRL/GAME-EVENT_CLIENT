@@ -1,9 +1,7 @@
 import { Component } from "react";
 import Menu from "../../../components/admin/menu/Menu.jsx";
 import CardOpinions from "../../../components/admin/opinions/CardOpinions.jsx"
-import PaginationCardOpinions from "../../../components/admin/opinions/PaginationCardOpinions.jsx"
 import CardEvents from "../../../components/admin/events/CardEvents.jsx"
-import PaginationCardEvents from "../../../components/admin/events/PaginationCardEvents.jsx"
 import logo from '../../../components/admin/assets/logo.png';
 import Button from "react-bootstrap/esm/Button.js";
 import Form from 'react-bootstrap/Form';
@@ -43,7 +41,6 @@ export class Home extends Component {
         <div className="containerMiddleHomePage">
           <h2 className="text-dark">LES AVIS</h2>
           <CardOpinions />
-          <PaginationCardOpinions />
         </div>
         <div className="middleHomePage">
           <div className="containerMiddleHomePage2">
@@ -59,15 +56,14 @@ export class Home extends Component {
               <Form.Control
                 type="search"
                 className="me-2"
-                aria-label="Recherche"
+                aria-label="Jeux"
               />
               <Button className='btnMiddleHomePage' variant="outline-warning">Recherche</Button>
             </Form>
             <CardEvents />
-            <PaginationCardEvents />
-            <Footer />
           </div>
         </div>
+        <Footer />
       </div>
     );
   }

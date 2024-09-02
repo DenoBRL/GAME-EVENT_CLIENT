@@ -353,7 +353,7 @@ video {
 
 .headerHomePage{
   background-image: url("./components/admin/assets/home_image.png");
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   height: 45vh;
   position: relative;
@@ -383,9 +383,9 @@ video {
 
 .middleHomePage {
   background-image: url("./components/admin/assets/middle_image.jpg");
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
-  height: 50vh;
+  // height: 50vh;
   position: relative;
   display: flex;
 }
@@ -418,6 +418,21 @@ video {
   cursor: pointer;
   transition: none;
 
+}
+
+.containerEvents {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  display: flex;
+}
+
+.btnEventHomePage{
+  align-items: center;
+}
+
+.paginationEvents{
+  display: flex;
+  justify-content: center;
 }
 
 .logoFooterHomePage {
