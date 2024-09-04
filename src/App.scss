@@ -350,7 +350,6 @@ video {
     }
 }
 
-
 .headerHomePage{
   background-image: url("./components/admin/assets/home_image.png");
   background-size: cover;
@@ -392,38 +391,30 @@ video {
 
 .containerMiddleHomePage2 {
   padding-top: 10px;
-}
 
-.textTitleMiddleHomePage{
-  color: #fff;
-}
+  .textTitleMiddleHomePage {
+    color: #fff;
+  }
 
-.textMiddleHomePage{
-  color: #fff;
-  padding-top: 20px;
-}
+  .textMiddleHomePage {
+    color: #fff;
+    padding-top: 20px;
+  }
 
-.searchMiddleHomePage{
-  display: flex;
-  padding-top: 20px;
-  padding-left: 250px;
-  padding-right: 250px;
-}
+  .searchMiddleHomePage {
+    display: flex;
+    padding-top: 20px;
+  }
 
-.btnMiddleHomePage{
-  padding: 10px 20px;
-  background: #c4a600;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  transition: none;
+  .btnMiddleHomePage {
+    padding: 10px 20px;
+    background: #c4a600;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: none;
+  }
 
-}
-
-.containerEvents {
-  flex-wrap: wrap;
-  justify-content: space-between;
-  display: flex;
 }
 
 .btnEventHomePage{

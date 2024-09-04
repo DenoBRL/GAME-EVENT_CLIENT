@@ -39,7 +39,10 @@ const Sidebar = () => {
                     {
                     key: '4',
                     icon: <CarryOutOutlined />,
-                    label: 'Évènements',
+                    label: 
+                        <a href="/admin/events">
+                            Évènements
+                        </a>,
                     },
                     {
                     key: '8',

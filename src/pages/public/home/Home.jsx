@@ -38,7 +38,7 @@ export class Home extends Component {
             </div>
           </div>
         </div>
-        <div className="containerMiddleHomePage">
+        <div>
           <h2 className="text-dark">LES AVIS</h2>
           <CardOpinions />
         </div>
@@ -52,7 +52,7 @@ export class Home extends Component {
               en fonction de vos critères. Il y en aura pour tous les goûts
               alors n&apos;hésitez plus et lancez-vous dans l&apos;expérience de Game-Event !
             </h4>
-            <Form className="searchMiddleHomePage">
+            <Form className="searchMiddleHomePage m-auto">
               <Form.Control
                 type="search"
                 className="me-2"
