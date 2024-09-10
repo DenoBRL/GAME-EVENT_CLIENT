@@ -1,82 +1,72 @@
 import { useEffect, useState } from "react";
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
-// import Menu from "../../../components/Menu";
 import axios from "axios";
 import { Link } from 'react-router-dom';
 
-const Events = () => {
-    const [events, setEvents] = useState([]);
+const Addresses = () => {
+    const [addresses, setAddresses] = useState([]);
 
     // const token = localStorage.getItem("access_token");
 
     useEffect(() => {
-        displayEvents();
+        displayAddresses();
     }, []); // Sans les crochets ça tourne en boucle
 
-    const displayEvents = async () => {
-        await axios.get('http://127.0.0.1:8000/api/events',
+    const displayAddresses = async () => {
+        await axios.get('http://127.0.0.1:8000/api/addresses',
             // {
             //     headers: {
             //         Authorization: `Bearer ${token}`,
             //     },
             // }
         ).then((res) => {
-            setEvents(res.data.data);
+            setAddresses(res.data);
         });
     };
 
     const deleteEvent = (id) => {
-        axios.delete(`http://127.0.0.1:8000/api/events/${id}`,
+        axios.delete(`http://127.0.0.1:8000/api/addresses/${id}`,
             // {
             //     headers: {
             //         Authorization: `Bearer ${token}`,
             //     },
             // }
-        ).then(displayEvents);
+        ).then(displayAddresses);
     };
 
     return (
         <div>
-            {/* <Menu /> */}
             <div className="container mt-5">
-                <h1 className="text-white">Liste des articles</h1>
+                <h1 className="text-dark">Liste des adressess</h1>
                 <br />
-                <Button variant="primary" href="/admin/events/add">Ajouter un nouvel évènement</Button>
+                <Button variant="primary" href="/admin/addresses/add">Ajouter une nouvelle adresse</Button>
                 <br /><br />
                 <Table striped bordered hover>
                     <thead>
                         <tr>
-                            <th>Évènement créé par</th>
-                            <th>Jeu</th>
-                            <th>Places</th>
-                            <th>Date</th>
-                            <th>Heure</th>
-                            <th>Lieu</th>
+                            <th>Adresse concernant l&apos;utilisateur</th>
+                            <th>Adresse</th>
+                            <th>Code postal</th>
+                            <th>Ville</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {events.map((event) => (
-                            <tr key={event.id}>
-                                <td>{event.user.pseudo}</td>
-                                <td>{event.game.name_game}</td>
-                                <td>{event.nb_players}</td>
-                                <td>{event.date_event}</td>
-                                <td>{event.hour_event}</td>
+                        {addresses.map((address) => (
+                            <tr key={address.id}>
+                                <td>{address.user.pseudo}</td>
+                                <td>{address.address}</td>
+                                <td>{address.postal_code}</td>
+                                <td>{address.city}</td>
                                 <td>
-                                    {event.address.address}
-                                    {event.address.postal_code}
-                                    {event.address.city}
-                                </td>
-                                <td>
-                                    <Link to={`/admin/events/edit/${event.id}`} className='btn btn-success me-2'>
+                                    <Link to={`/admin/addresses/edit/${address.id}`} className='btn btn-success me-2'>
                                         Modifer
                                     </Link>
                                     <Button
                                         variant="danger"
                                         onClick={() => {
-                                            deleteEvent(event.id);
+                                            deleteEvent(address.id);
                                         }}
                                     >
                                         Supprimer
@@ -93,4 +83,4 @@ const Events = () => {
         </div>
     );
 };
-export default Events;
+export default Addresses;

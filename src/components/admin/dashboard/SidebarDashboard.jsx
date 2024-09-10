@@ -1,6 +1,6 @@
 import { Flex, Menu } from 'antd';
 import logo from '../assets/logo.png';
-import { UnorderedListOutlined, FormOutlined, EditOutlined, RedditOutlined, UserSwitchOutlined, UserOutlined, ProfileOutlined, LogoutOutlined, OrderedListOutlined, CarryOutOutlined, SettingOutlined } from '@ant-design/icons';
+import { UnorderedListOutlined, FormOutlined, EditOutlined, RedditOutlined, UserOutlined, ProfileOutlined, LogoutOutlined, OrderedListOutlined, CarryOutOutlined } from '@ant-design/icons';
 
 const Sidebar = () => {
     return (
@@ -19,22 +19,34 @@ const Sidebar = () => {
                     {
                     key: '1',
                     icon: <UserOutlined />,
-                    label: 'Dashboard',
+                    label: 
+                        <a href="/admin">
+                            Dashboard
+                        </a>,
                     },
                     {
                     key: '2',
                     icon: <ProfileOutlined />,
-                    label: 'Utilisateurs',
+                    label: 
+                        <a href="/admin/users">
+                            Utilisateurs
+                        </a>,
                     },
-                    {
-                    key: '7',
-                    icon: <UserSwitchOutlined />,
-                    label: 'Roles',
-                    },
+                    // {
+                    // key: '12',
+                    // icon: <UserSwitchOutlined />,
+                    // label: 
+                    //     <a href="/admin/roles">
+                    //         Rôles
+                    //     </a>,
+                    // },
                     {
                     key: '3',
                     icon: <OrderedListOutlined />,
-                    label: 'Adresses',
+                    label: 
+                        <a href="/admin/addresses">
+                            Adresses
+                        </a>,
                     },
                     {
                     key: '4',
@@ -45,39 +57,57 @@ const Sidebar = () => {
                         </a>,
                     },
                     {
-                    key: '8',
-                    icon: <RedditOutlined />,
-                    label: 'Jeux',
-                    },
-                    {
-                    key: '11',
-                    icon: <UnorderedListOutlined />,
-                    label: 'Catégories',
-                    },
-                    {
-                    key: '12',
-                    icon: <UnorderedListOutlined />,
-                    label: 'Types',
-                    },
-                    {
-                    key: '9',
-                    icon: <EditOutlined />,
-                    label: 'Commentaires',
-                    },
-                    {
-                    key: '10',
-                    icon: <FormOutlined />,
-                    label: 'Avis',
-                    },
-                    {
                     key: '5',
-                    icon: <SettingOutlined />,
-                    label: 'Paramètres',
+                    icon: <RedditOutlined />,
+                    label: 
+                        <a href="/admin/games">
+                            Jeux
+                        </a>,
                     },
                     {
                     key: '6',
+                    icon: <UnorderedListOutlined />,
+                    label: 
+                        <a href="/admin/categories">
+                            Jeux/Catégories
+                        </a>,
+                    },
+                    {
+                    key: '7',
+                    icon: <UnorderedListOutlined />,
+                    label: 
+                        <a href="/admin/kinds">
+                            Jeux/Types
+                        </a>,
+                    },
+                    {
+                    key: '8',
+                    icon: <EditOutlined />,
+                    label: 
+                        <a href="/admin/comments">
+                            Commentaires
+                        </a>,
+                    },
+                    {
+                    key: '9',
+                    icon: <FormOutlined />,
+                    label: 
+                        <a href="/admin/opinions">
+                            Avis
+                        </a>,
+                    },
+                    // {
+                    // key: '11',
+                    // icon: <SettingOutlined />,
+                    // label: 'Paramètres',
+                    // },
+                    {
+                    key: '10',
                     icon: <LogoutOutlined />,
-                    label: 'Déconnexion',
+                    label: 
+                        <a href="/logout">
+                            Déconnexion
+                        </a>,
                     },
                     
                     

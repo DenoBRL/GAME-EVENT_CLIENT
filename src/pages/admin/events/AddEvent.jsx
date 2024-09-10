@@ -4,11 +4,9 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import axios from "axios";
-import { useNavigate, useParams } from "react-router-dom";
-// import Menu from "../../../components/Menu";
+import { useNavigate } from "react-router-dom";
 
-const EditEvent = () => {
-    const { event } = useParams()
+const AddEvent = () => {
     const navigate = useNavigate();
     const [user_id, setUserId] = useState("");
     const [users, setUsers] = useState([]);
@@ -27,8 +25,8 @@ const EditEvent = () => {
         setUserId(event.target.value);
         setGameId(event.target.value);
         setAddressId(event.target.value);
-    }
 
+    }
     useEffect(() => {
         getUsers();
         getGames();
@@ -71,10 +69,9 @@ const EditEvent = () => {
         })
     }
 
-    const updateEvent = async (e) => {
+    const AddEvent = async (e) => {
         e.preventDefault();
         const formData = new FormData();
-        formData.append('_method', 'PATCH');
         formData.append("user_id", user_id);
         formData.append("game_id", game_id);
         formData.append("nb_players", nb_players);
@@ -82,7 +79,7 @@ const EditEvent = () => {
         formData.append("hour_event", hour_event);
         formData.append("address_id", address_id);
         await axios
-            .post(`http://127.0.0.1:8000/api/events/${event}`, formData,
+            .post(`http://127.0.0.1:8000/api/events`, formData,
                 // {
                 //     headers: {
                 //         Authorization: `Bearer ${token}`,
@@ -91,20 +88,19 @@ const EditEvent = () => {
             )
             .then(navigate("/events"))
             .catch(({ response }) => {
-                if (response.status === 422) {
-                    setValidationError(response.data.errors);
+                if (response.status != 200) {
+                    setValidationError(response.data);
                 }
             });
     };
     return (
         <div>
-            {/* <Menu /> */}
             <div className="container mt-5">
                 <div className="row justify-content-center">
                     <div className="col-12 col-sm-12 col-md-6">
                         <div className="card">
                             <div className="card-body">
-                                <h4 className="card-title">Modifier l&apos;évènement</h4>
+                                <h4 className="card-title">Création d&apos;un nouvel évènement</h4>
                                 <hr />
                                 <div className="form-wrapper">
                                     {Object.keys(validationError).length > 0 && (
@@ -122,14 +118,14 @@ const EditEvent = () => {
                                             </div>
                                         </div>
                                     )}
-                                    <Form onSubmit={updateEvent}>
+                                    <Form onSubmit={AddEvent}>
                                         <Row>
                                             <Col>
                                                 <Form.Group controlId="pseudo">
                                                     <Form.Label>Pseudo</Form.Label>
                                                     <Form.Select aria-label="Default select example"
                                                         onChange={handleChange}>
-                                                        <option>Choisissez un lieu</option>
+                                                        <option>Votre pseudo</option>
                                                         {users.map(user => (
                                                             <option
                                                                 key={user.id}
@@ -147,11 +143,12 @@ const EditEvent = () => {
                                                     <Form.Label>Jeu</Form.Label>
                                                     <Form.Select aria-label="Default select example"
                                                         onChange={handleChange}>
+                                                        <option>Votre jeu</option>
                                                         {games.map(game => (
                                                             <option
                                                                 key={game.id}
                                                                 value={game.id}>
-                                                                {game.Name_game}
+                                                                {game.name_game}
                                                             </option>
                                                         ))}
                                                     </Form.Select>
@@ -221,12 +218,12 @@ const EditEvent = () => {
                                             </Col>
                                         </Row>
                                         <Button
-                                            variant="dark"
-                                            className="mt-2"
+                                            variant="primary"
+                                            className="mt-4"
                                             block="block"
                                             type="submit"
                                         >
-                                            Modifier l&apos;évènement
+                                            Créer un nouvel évènement
                                         </Button>
                                     </Form>
                                 </div>
@@ -242,4 +239,4 @@ const EditEvent = () => {
         </div>
     );
 };
-export default EditEvent;
+export default AddEvent;

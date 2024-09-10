@@ -1,7 +1,7 @@
 import { Component } from "react";
 import Menu from "../../../components/admin/menu/Menu.jsx";
-import CardOpinions from "../../../components/admin/opinions/CardOpinions.jsx"
-import CardEvents from "../../../components/admin/events/CardEvents.jsx"
+import CardOpinions from "../../../pages/admin/opinions/CardOpinions.jsx"
+import CardEvents from "../../../pages/public/events/CardEvents.jsx"
 import logo from '../../../components/admin/assets/logo.png';
 import Button from "react-bootstrap/esm/Button.js";
 import Form from 'react-bootstrap/Form';

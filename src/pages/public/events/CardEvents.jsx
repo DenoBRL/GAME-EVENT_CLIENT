@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 // import Card from 'react-bootstrap/Card';
 import axios from "axios";
 import ReactPaginate from 'react-paginate';
+import Button from 'react-bootstrap/Button'
+import { Link } from "react-router-dom";
 
 function BasicExample() {
   const [events, setEvents] = useState([]);
@@ -52,6 +54,9 @@ function BasicExample() {
                     {event.address.postal_code}
                     {event.address.city}
                 </p>
+                <Link to={`/event/${event.id}`}>
+                  <Button variant="primary">Voir l&apos;évènement</Button>
+                </Link>
               </div>
             </div>
           </div>
