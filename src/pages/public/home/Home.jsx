@@ -25,7 +25,7 @@ export class Home extends Component {
             </h1>
             <h4 className='textHeaderHomePage'>
               Ici, vous trouverez tout ce dont vous avez besoin pour
-              passer un bon moment de partage et de conviviamité !
+              passer un bon moment de partage et de convivialité !
             </h4>
             <div className="pt-5">
               <Button

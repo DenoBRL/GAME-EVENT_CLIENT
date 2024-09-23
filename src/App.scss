@@ -432,7 +432,23 @@ video {
   margin: auto;
 }
 
-// 
+//
+
+// Profile User
+
+.headerUserProfilePage {
+  background-image: url("./components/admin/assets/profile_image.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: auto;
+  min-width: 100%;
+  position: absolute;
+  display: block;
+}
+
+// User Profile Card
+
+
 
 .menu-bar{
     display: flex;

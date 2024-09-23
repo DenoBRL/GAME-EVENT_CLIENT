@@ -418,6 +418,16 @@ video {
   margin: auto;
 }
 
+.headerUserProfilePage {
+  background-image: url("./components/admin/assets/profile_image.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: auto;
+  min-width: 100%;
+  position: absolute;
+  display: block;
+}
+
 .menu-bar {
   display: flex;
   flex-direction: column;

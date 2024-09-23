@@ -1,5 +1,5 @@
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+// import Button from 'react-bootstrap/Button';
+// import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
@@ -28,18 +28,18 @@ function NavScrollExample() {
                         <Nav.Link href="/">Accueil</Nav.Link>
                         <Nav.Link href="/register">Inscription</Nav.Link>
                         <Nav.Link href="/login">Connexion</Nav.Link>
-                        <Nav.Link href="/users/:userid">Profil</Nav.Link>
+                        <Nav.Link href="/user">Profil</Nav.Link>
                         <Nav.Link href="/logout">Déconnexion</Nav.Link>
                         <Nav.Link href="/contact">Contact</Nav.Link>
                     </Nav>
-                    <Form className="d-flex">
+                    {/* <Form className="d-flex">
                         <Form.Control
                             type="search"
                             className="me-2"
                             aria-label="Recherche"
                         />
                         <Button variant="outline-primary">Recherche</Button>
-                    </Form>
+                    </Form> */}
                 </Navbar.Collapse>
            </Container>
         </Navbar>

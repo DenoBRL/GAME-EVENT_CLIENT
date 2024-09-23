@@ -2,16 +2,16 @@ import { Layout, Button } from 'antd';
 import { useState } from 'react';
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
 
-import SidebarDashboard from '../../../components/admin/dashboard/SidebarDashboard';
-import CustomHeader from '../../../components/admin/dashboard/HeaderDashboard';
+import UserSidebarDashboard from '../../../components/admin/userdashboard/UserSidebarDashboard';
+// import UserCustomHeader from '../../../components/admin/userdashboard/UserHeaderDashboard';
 
 import { Outlet } from 'react-router-dom';
 
 import Menu from "../../../components/admin/menu/Menu.jsx";
+import Footer from "../../../components/admin/footer/Footer.jsx";
 
-
-const { Sider, Header, Content } = Layout;
-const AdminLayout = () => {
+const { Sider, Content } = Layout;
+const UserLayout = () => {
   const [collapsed, setCollapsed] = useState(false)
   return (
     <div>
@@ -24,7 +24,7 @@ const AdminLayout = () => {
           ollapsed={collapsed} 
           className="sider"
         >
-          <SidebarDashboard />
+          <UserSidebarDashboard />
 
           <Button 
             type='text' 
@@ -34,16 +34,17 @@ const AdminLayout = () => {
           />
         </Sider>
         <Layout>
-          <Header className='header'>
-            <CustomHeader />
-          </Header>
+          {/* <Header className='header'>
+            <UserCustomHeader />
+          </Header> */}
           <Content className='content'>
             <Outlet />
           </Content>
         </Layout>
       </Layout>
+      <Footer />
     </div>
   )
 }
 
-export default AdminLayout;
+export default UserLayout;

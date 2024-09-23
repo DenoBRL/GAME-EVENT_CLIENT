@@ -1,51 +1,49 @@
 import { useEffect, useState } from "react";
-import Table from "react-bootstrap/Table";
-import Button from "react-bootstrap/Button";
+import Button from 'react-bootstrap/Button';
 import axios from "axios";
+import { useParams } from "react-router-dom";
 import { Link } from 'react-router-dom';
+import Table from "react-bootstrap/Table";
 
-const Addresses = () => {
-    const [addresses, setAddresses] = useState([]);
+function UserAddress() {
+    const [userAddress, setUserAddress] = useState([]);
+    const { addressid } = useParams();
 
     // const token = localStorage.getItem("access_token");
 
     useEffect(() => {
-        displayAddresses();
-    }, []); 
+        displayUserAddress();
+    }, []);
 
-    const displayAddresses = async () => {
-        await axios.get('http://127.0.0.1:8000/api/addresses',
+    const displayUserAddress = async () => {
+        await axios.get(`http://127.0.0.1:8000/api/addresses/${addressid}`,
             // {
-            //     headers: {
-            //         Authorization: `Bearer ${token}`,
-            //     },
+            //         headers: {
+            //             Authorization: `Bearer ${token}`,
+            //         },
             // }
         ).then((res) => {
-            setAddresses(res.data);
+            setUserAddress(res.data);
         });
-    };
 
-    const deleteEvent = (id) => {
-        axios.delete(`http://127.0.0.1:8000/api/addresses/${id}`,
+    }
+
+    const deleteUserAddress = (id) => {
+        axios.delete(`http:/127.0.0.1:8000/api/addresses/${id}`,
             // {
             //     headers: {
             //         Authorization: `Bearer ${token}`,
             //     },
             // }
-        ).then(displayAddresses);
+        ).then(displayUserAddress);
     };
 
     return (
         <div>
             <div className="container mt-5">
-                <h1 className="text-dark">Liste des adressess</h1>
-                <br />
-                <Button variant="primary" href="/admin/addresses/add">Ajouter une nouvelle adresse</Button>
-                <br /><br />
                 <Table striped bordered hover>
                     <thead>
                         <tr>
-                            <th>Adresse concernant l&apos;utilisateur</th>
                             <th>Adresse</th>
                             <th>Code postal</th>
                             <th>Ville</th>
@@ -53,27 +51,24 @@ const Addresses = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {addresses.map((address) => (
-                            <tr key={address.id}>
-                                <td>{address.user.pseudo}</td>
-                                <td>{address.address}</td>
-                                <td>{address.postal_code}</td>
-                                <td>{address.city}</td>
+                            <tr key={UserAddress.id}>
+                                <td>{UserAddress.address}</td>
+                                <td>{UserAddress.postal_code}</td>
+                                <td>{UserAddress.city}</td>
                                 <td>
-                                    <Link to={`/admin/addresses/edit/${address.id}`} className='btn btn-success me-2'>
+                                    <Link to={`/addresses/edit/${UserAddress.id}`} className='btn btn-success me-2'>
                                         Modifer
                                     </Link>
                                     <Button
                                         variant="danger"
                                         onClick={() => {
-                                            deleteEvent(address.id);
+                                            deleteUserAddress(userAddress.id);
                                         }}
                                     >
                                         Supprimer
                                     </Button>
                                 </td>
                             </tr>
-                        ))}
                     </tbody>
                 </Table>
                 <br />
@@ -82,5 +77,5 @@ const Addresses = () => {
             </div>
         </div>
     );
-};
-export default Addresses;
+}
+export default UserAddress;

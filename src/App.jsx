@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import PublicRouter from "./pages/public/routes/PublicRouter.jsx";
+import UserRouter from "./pages/public/routes/UserRouter.jsx";
 import AdminRouter from "./pages/admin/routes/AdminRouter.jsx";
 // import Login from "./pages/public/Login";
 // import AuthGuard from "./components/admin/AuthGuard";
@@ -20,6 +21,11 @@ function App() {
           // </AuthGuard>
       } />
       {/* <Route path="/admin/*" element={token ? <AdminRouter/> : <Login/> } /> */}
+      <Route path="/user/*" element={
+          // <AuthGuard>
+            <UserRouter/>
+          // </AuthGuard>
+      } />
       </Routes>
     </BrowserRouter>
   );

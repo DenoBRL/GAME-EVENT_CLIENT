@@ -6,8 +6,7 @@ import Register from '../../public/register/Register.jsx';
 import PublicLayout from '../../public/routes/PublicLayout.jsx';
 // import Blog from '../../pages/public/blog/Blog'
 // import ShowGoodPlan from '../../pages/admin/goodplans/ShowGoodPlan';
-import ShowEvent from '../../../pages/public/events/ShowEvent.jsx';
-import ShowUserProfile from '../../../pages/public/users/ShowUserProfile.jsx';
+// import ShowEvent from '../../../pages/public/events/ShowEvent.jsx';
 
 // import Error from "../../assets/Error";
 
@@ -20,8 +19,7 @@ const PublicRouter = () => {
                 <Route path="/register" element={<Register />} />
                 {/* <Route path="/blog" element={<Blog />} /> */}
                 {/* <Route path="/goodplans/show/:goodplanid" element={<ShowGoodPlan />} /> */}
-                <Route path="/event/:eventid" element={<ShowEvent />} />
-                <Route path="/users/:userid" element={<ShowUserProfile />} />
+                {/* <Route path="/event/:eventid" element={<ShowEvent />} /> */}
 
                 {/* <Route path="*" element={<Error />} /> */}
             </Route>

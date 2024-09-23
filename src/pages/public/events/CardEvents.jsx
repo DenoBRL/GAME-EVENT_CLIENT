@@ -45,7 +45,8 @@ function BasicExample() {
               <div className="card-body">
                 <p>Évènement créé par : {event.user.pseudo}</p>
                 <p>Jeu : {event.game.name_game}</p>
-                <p>Places : {event.nb_players}</p>
+                <p>Nombre de joueurs : {event.nb_players}</p>
+                <p>Places : {event.place}</p>
                 <p>Date : {event.date_event}</p>
                 <p>Heure : {event.hour_event}</p>
                 <p>
